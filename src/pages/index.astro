@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import FloatingCTA from "../components/layout/FloatingCTA.astro";
+import Hero from "../components/sections/Hero.astro";
+import Worries from "../components/sections/Worries.astro";
+import Features from "../components/sections/Features.astro";
+import Difference from "../components/sections/Difference.astro";
+import Flow from "../components/sections/Flow.astro";
+import Faq from "../components/sections/Faq.astro";
+import Company from "../components/sections/Company.astro";
+import Contact from "../components/sections/Contact.astro";
+---
+
+<BaseLayout>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Worries />
+    <Features />
+    <Difference />
+    <Flow />
+    <Faq />
+    <Company />
+    <Contact />
+  </main>
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>

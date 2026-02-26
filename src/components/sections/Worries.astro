@@ -1,0 +1,35 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import WorryItem from "../ui/WorryItem.astro";
+
+const worries = [
+  "相続した実家が空き家のまま放置されている",
+  "遠方に住んでいて管理ができない",
+  "築年数が古く、売れるか不安",
+  "不動産の相続手続きがよくわからない",
+  "仲介に出したが、なかなか売れない",
+  "片付けや修繕をする余裕がない",
+];
+---
+
+<section id="worries" class="bg-bg py-16 md:py-24">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+    <div class="fade-in">
+      <SectionHeading tag="Worries">
+        こんなお悩みはありませんか？
+      </SectionHeading>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 max-w-3xl mx-auto fade-in">
+      {worries.map((worry) => (
+        <WorryItem text={worry} />
+      ))}
+    </div>
+
+    <div class="text-center mt-10 fade-in">
+      <p class="text-lg md:text-xl font-bold text-primary">
+        そのお悩み、<span class="text-accent">XX不動産</span>が解決します。
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import Card from "../ui/Card.astro";
+
+const features = [
+  {
+    icon: "savings",
+    title: "仲介手数料0円",
+    description: "当社が直接買取するため、仲介手数料は一切かかりません。余計な費用負担なく、売却いただけます。",
+  },
+  {
+    icon: "schedule",
+    title: "最短1週間で現金化",
+    description: "買い手を探す必要がないため、スピーディーに現金化。急ぎの資金需要にも対応いたします。",
+  },
+  {
+    icon: "home",
+    title: "そのままの状態でOK",
+    description: "残置物の片付けや修繕は不要です。現在の状態のまま、そのままお売りいただけます。",
+  },
+];
+---
+
+<section id="features" class="bg-white py-16 md:py-24">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+    <div class="fade-in">
+      <SectionHeading tag="Features" subtitle="仲介売却にはない、不動産買取ならではのメリットをご紹介します。">
+        不動産買取の3つの特徴
+      </SectionHeading>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      {features.map((feature) => (
+        <div class="fade-in">
+          <Card icon={feature.icon} title={feature.title}>
+            {feature.description}
+          </Card>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

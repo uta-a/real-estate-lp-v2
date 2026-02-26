@@ -1,0 +1,49 @@
+---
+import Button from "../ui/Button.astro";
+
+const phone = "0120-XXX-XXX";
+const phoneHref = `tel:${phone.replace(/-/g, "")}`;
+---
+
+<section class="relative bg-primary overflow-hidden">
+  {/* 背景画像 + オーバーレイ */}
+  <div class="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=80"
+      alt=""
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-primary/75"></div>
+  </div>
+
+  <div class="relative max-w-[1200px] mx-auto px-5 md:px-8 py-16 md:py-24 lg:py-32">
+    <div class="max-w-2xl">
+      <p class="text-accent font-bold text-sm md:text-base tracking-widest mb-4">
+        佐賀県全域対応 / 仲介手数料0円
+      </p>
+      <h1 class="text-[28px] md:text-[40px] lg:text-[48px] font-bold text-white leading-tight mb-6">
+        佐賀の実家・空き家、<br />そのままお売りください。
+      </h1>
+      <p class="text-base md:text-lg text-white/85 leading-relaxed mb-8 max-w-lg">
+        築年数・物件の状態は問いません。<br class="hidden md:block" />
+        面倒な片付けや修繕なしで、スムーズに現金化できます。
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-start gap-4 mb-8">
+        <Button href="#contact" variant="accent" size="lg">
+          <span class="material-symbols-outlined text-xl mr-2" aria-hidden="true">description</span>
+          無料査定を依頼する
+        </Button>
+        <Button href={phoneHref} variant="outline" size="lg">
+          <span class="material-symbols-outlined text-xl mr-2" aria-hidden="true">call</span>
+          {phone}
+        </Button>
+      </div>
+
+      <p class="text-white/60 text-sm">
+        受付時間: 9:00〜18:00（土日祝も対応）
+      </p>
+    </div>
+  </div>
+</section>

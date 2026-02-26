@@ -1,0 +1,26 @@
+---
+interface Props {
+  tag?: string;
+  subtitle?: string;
+  align?: "center" | "left";
+}
+
+const { tag, subtitle, align = "center" } = Astro.props;
+const alignClass = align === "center" ? "text-center" : "text-left";
+---
+
+<div class:list={["mb-10 md:mb-14", alignClass]}>
+  {tag && (
+    <span class="inline-block text-sm font-bold tracking-widest text-accent uppercase mb-3">
+      {tag}
+    </span>
+  )}
+  <h2 class="text-2xl md:text-4xl font-bold leading-tight text-primary">
+    <slot />
+  </h2>
+  {subtitle && (
+    <p class="mt-4 text-base md:text-lg text-text-light max-w-2xl mx-auto leading-relaxed">
+      {subtitle}
+    </p>
+  )}
+</div>

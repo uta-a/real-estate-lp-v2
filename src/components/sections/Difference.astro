@@ -1,0 +1,47 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const rows = [
+  { label: "手数料", broker: "売却額の3%+6万円", general: "なし", ours: "なし" },
+  { label: "売却期間", broker: "3〜6ヶ月", general: "1〜4週間", ours: "最短1週間" },
+  { label: "内覧対応", broker: "必要", general: "不要", ours: "不要" },
+  { label: "片付け・修繕", broker: "必要な場合あり", general: "相談次第", ours: "一切不要" },
+  { label: "契約不適合責任", broker: "売主負担", general: "免責の場合あり", ours: "完全免責" },
+  { label: "プライバシー", broker: "広告掲載あり", general: "なし", ours: "秘密厳守" },
+];
+---
+
+<section id="difference" class="bg-bg py-16 md:py-24">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+    <div class="fade-in">
+      <SectionHeading tag="Difference">
+        他社との違い
+      </SectionHeading>
+    </div>
+
+    <div class="overflow-x-auto -mx-5 md:mx-0 px-5 md:px-0 fade-in">
+      <table class="w-full min-w-[600px] border-collapse text-base">
+        <thead>
+          <tr>
+            <th class="p-4 text-left text-text-light font-normal border-b-2 border-border w-[20%]"></th>
+            <th class="p-4 text-center font-bold border-b-2 border-border text-text-light w-[26%]">仲介売却</th>
+            <th class="p-4 text-center font-bold border-b-2 border-border text-text-light w-[26%]">一般的な買取</th>
+            <th class="p-4 text-center font-bold border-b-2 border-accent bg-accent/10 text-primary rounded-t-lg w-[28%]">
+              XX不動産
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr class="border-b border-border">
+              <td class="p-4 font-bold text-text">{row.label}</td>
+              <td class="p-4 text-center text-text-light">{row.broker}</td>
+              <td class="p-4 text-center text-text-light">{row.general}</td>
+              <td class="p-4 text-center font-bold text-primary bg-accent/5">{row.ours}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

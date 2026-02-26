@@ -1,0 +1,32 @@
+---
+interface Props {
+  href?: string;
+  variant?: "accent" | "outline" | "white";
+  size?: "md" | "lg";
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { href, variant = "accent", size = "md", class: className, ...rest } = Astro.props;
+
+const Tag = href ? "a" : "button";
+
+const baseClasses = "inline-flex items-center justify-center font-bold rounded-lg transition-all duration-200 cursor-pointer";
+const sizeClasses = {
+  md: "px-6 py-3 text-base min-h-[48px]",
+  lg: "px-8 py-4 text-lg min-h-[56px]",
+};
+const variantClasses = {
+  accent: "bg-accent text-primary-dark hover:bg-accent-hover hover:scale-105 hover:shadow-lg",
+  outline: "border-2 border-white text-white hover:bg-white/10",
+  white: "bg-white text-primary hover:bg-gray-50 hover:scale-105 hover:shadow-lg",
+};
+---
+
+<Tag
+  href={href}
+  class:list={[baseClasses, sizeClasses[size], variantClasses[variant], className]}
+  {...rest}
+>
+  <slot />
+</Tag>

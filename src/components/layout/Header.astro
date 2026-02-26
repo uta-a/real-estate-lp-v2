@@ -1,0 +1,41 @@
+---
+const phone = "0120-XXX-XXX";
+const phoneHref = `tel:${phone.replace(/-/g, "")}`;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-8 flex items-center justify-between h-16 md:h-20">
+    <a href="/" class="flex items-center gap-2" aria-label="XX不動産 トップページ">
+      <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">home_work</span>
+      <span class="text-lg md:text-xl font-bold text-primary">XX不動産</span>
+    </a>
+
+    <div class="flex items-center gap-4">
+      {/* SP: 電話アイコンのみ */}
+      <a
+        href={phoneHref}
+        class="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white"
+        aria-label="電話で問い合わせ"
+      >
+        <span class="material-symbols-outlined text-2xl" aria-hidden="true">call</span>
+      </a>
+
+      {/* PC: 電話番号 + CTAボタン */}
+      <div class="hidden md:flex items-center gap-6">
+        <a href={phoneHref} class="flex items-center gap-2 text-primary font-bold">
+          <span class="material-symbols-outlined text-2xl" aria-hidden="true">call</span>
+          <span class="text-xl tracking-wide">{phone}</span>
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center px-6 py-3 bg-accent text-primary-dark font-bold rounded-lg hover:bg-accent-hover hover:scale-105 hover:shadow-lg transition-all duration-200 min-h-[48px]"
+        >
+          無料査定はこちら
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+{/* ヘッダー分のスペーサー */}
+<div class="h-16 md:h-20" aria-hidden="true"></div>

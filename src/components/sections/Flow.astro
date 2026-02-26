@@ -1,0 +1,54 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import StepCard from "../ui/StepCard.astro";
+
+const steps = [
+  {
+    icon: "mail",
+    title: "お問い合わせ",
+    description: "お電話またはフォームからお気軽にご連絡ください。",
+  },
+  {
+    icon: "location_on",
+    title: "現地調査・査定",
+    description: "スタッフが現地を訪問し、無料で査定いたします。",
+  },
+  {
+    icon: "handshake",
+    title: "契約・お引き渡し",
+    description: "条件にご納得いただけたら、契約・引き渡しへ進みます。",
+  },
+  {
+    icon: "payments",
+    title: "お支払い",
+    description: "最短1週間でお支払い。迅速に現金化いたします。",
+  },
+];
+---
+
+<section id="flow" class="bg-white py-16 md:py-24">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+    <div class="fade-in">
+      <SectionHeading tag="Flow" subtitle="お問い合わせから最短1週間で現金化が可能です。">
+        買取の流れ
+      </SectionHeading>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative">
+      {/* PC: ステップ間の接続線 */}
+      <div class="hidden md:block absolute top-8 left-[15%] right-[15%] h-0.5 bg-border" aria-hidden="true"></div>
+
+      {steps.map((step, i) => (
+        <div class="fade-in relative">
+          {/* SP: 縦線 */}
+          {i < steps.length - 1 && (
+            <div class="md:hidden absolute left-8 top-16 w-0.5 h-8 bg-border" aria-hidden="true"></div>
+          )}
+          <StepCard step={i + 1} icon={step.icon} title={step.title}>
+            {step.description}
+          </StepCard>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

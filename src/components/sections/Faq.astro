@@ -1,0 +1,49 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import AccordionItem from "../ui/AccordionItem.astro";
+
+const faqs = [
+  {
+    question: "築40年以上の古い物件でも買取できますか？",
+    answer: "はい、築年数は問いません。築40年、50年以上の物件でも買取実績がございます。まずはお気軽にご相談ください。",
+  },
+  {
+    question: "遠方に住んでいますが、対応可能ですか？",
+    answer: "もちろん対応可能です。お電話やオンラインでのご相談から始められます。現地の調査・手続きも当社が責任を持って対応いたします。",
+  },
+  {
+    question: "査定だけでも依頼できますか？",
+    answer: "はい、査定のみのご依頼も歓迎しております。査定は完全無料で、査定後に売却を見送られても費用は一切発生しません。",
+  },
+  {
+    question: "相続手続きがまだ済んでいませんが相談できますか？",
+    answer: "相続手続き中でもご相談いただけます。提携の司法書士と連携し、相続登記から売却まで一括でサポートいたします。",
+  },
+  {
+    question: "近所に知られずに売却できますか？",
+    answer: "はい、秘密厳守で対応いたします。当社が直接買取するため、広告掲載や内覧会は一切行いません。プライバシーを守りながら売却を進められます。",
+  },
+  {
+    question: "家財道具がそのまま残っていますが大丈夫ですか？",
+    answer: "問題ございません。残置物の処分は当社が負担いたします。そのままの状態でお引き渡しいただけます。",
+  },
+];
+---
+
+<section id="faq" class="bg-bg py-16 md:py-24">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+    <div class="fade-in">
+      <SectionHeading tag="FAQ">
+        よくある質問
+      </SectionHeading>
+    </div>
+
+    <div class="max-w-3xl mx-auto fade-in">
+      {faqs.map((faq) => (
+        <AccordionItem question={faq.question}>
+          {faq.answer}
+        </AccordionItem>
+      ))}
+    </div>
+  </div>
+</section>

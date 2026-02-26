@@ -1,0 +1,46 @@
+---
+import Button from "../ui/Button.astro";
+
+const phone = "0120-XXX-XXX";
+const phoneHref = `tel:${phone.replace(/-/g, "")}`;
+---
+
+<section id="contact" class="bg-primary py-16 md:py-24">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-8 text-center">
+    <div class="fade-in">
+      <p class="text-accent font-bold text-sm tracking-widest mb-4">Contact</p>
+      <h2 class="text-2xl md:text-4xl font-bold text-white leading-tight mb-4">
+        まずはお気軽にご相談ください
+      </h2>
+      <p class="text-base md:text-lg text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+        査定は無料です。売却を決めていなくても構いません。<br class="hidden md:block" />
+        お電話またはフォームから、お気軽にお問い合わせください。
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 fade-in">
+      <Button href={phoneHref} variant="accent" size="lg">
+        <span class="material-symbols-outlined text-xl mr-2" aria-hidden="true">call</span>
+        {phone}
+      </Button>
+      <Button href="#contact-form" variant="outline" size="lg">
+        <span class="material-symbols-outlined text-xl mr-2" aria-hidden="true">description</span>
+        無料査定フォームへ
+      </Button>
+    </div>
+
+    <p class="text-white/50 text-sm mb-12 fade-in">受付時間: 9:00〜18:00（土日祝も対応）</p>
+
+    {/* フォーム プレースホルダー */}
+    <div id="contact-form" class="max-w-2xl mx-auto fade-in">
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 md:p-12 border border-white/20">
+        <span class="material-symbols-outlined text-5xl text-white/40 mb-4" aria-hidden="true">edit_note</span>
+        <p class="text-lg font-bold text-white mb-2">お問い合わせフォーム</p>
+        <p class="text-white/60 text-base">
+          フォームは現在準備中です。<br />
+          お急ぎの方はお電話にてお問い合わせください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
